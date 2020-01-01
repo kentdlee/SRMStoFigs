@@ -1,0 +1,14 @@
+#!/bin/bash
+FILE=$1
+srmstofigs $FILE
+for x in $FILE*.fig
+do
+  base=`basename $x .fig`
+  echo "Converting" $base "to PDF"
+  fig2dev -Lpdf  $x $base.pdf
+  fig2dev -Lps $x $base.ps
+done
+gs -q -sDEVICE=pdfwrite -sOutputFile=$FILE.pdf -dNOPAUSE -dBATCH $FILE*.ps
+rm $FILE*.fig
+rm $FILE*.ps
+open $FILE.pdf

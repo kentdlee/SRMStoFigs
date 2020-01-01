@@ -1,0 +1,13 @@
+#!/bin/bash
+FILE=$1
+srmstofigs $FILE
+for x in $FILE*.fig
+do
+  base=`basename $x .fig`
+  echo "Converting" $base "to PNG"
+  fig2dev -Lpdf  $x $base.pdf
+  convert -density 150 $base.pdf -quality 90 $base.png
+done
+rm $FILE*.fig
+rm $FILE*.pdf
+open $FILE*.png
