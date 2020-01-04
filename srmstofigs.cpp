@@ -1,4 +1,7 @@
 /*   Copyright (c) 2010, 2019 by Kent D. Lee */
+/*   This tool is free to use for educational and commercial purposes.
+     If you wish to incorporate this code, in full or in part, into a
+     commercial product then you must obtain a license from the author. */
 /*   Added support for more components */
 /*   now allow components to be defined anywhere in source file using
      the component keyword */
