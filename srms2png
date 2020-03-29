@@ -6,7 +6,7 @@ do
   base=`basename $x .fig`
   echo "Converting" $base "to PNG"
   fig2dev -Lpdf  $x $base.pdf
-  convert -density 150 $base.pdf -quality 90 $base.png
+  convert -trim -density 150 $base.pdf -quality 90 $base.png
 done
 rm $FILE*.fig
 rm $FILE*.pdf

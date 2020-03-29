@@ -25,7 +25,8 @@ ctext@ p62816 "Processing segment. SeqNum=71453";
 p62816 p62817 "Packet SeqNum=71453, AckNum=16952, flags=<data packet>";
 ctext@ p62817 "state=ESTABLISHED";
 ctext@ p62817 "received packet: <data packet>, SeqNum=71453, AckNum=16952";
-p62817 a62817 "Data";
+p62817 a62817 "Data"+
+p62817 a62817 "With more Data";
 ctext@ a62817 "read what should be 'Hi there'";
 ctext@ a62817 "wrote 'How are you?'";
 ctext@ p62817 "Processing segment. SeqNum=16952";

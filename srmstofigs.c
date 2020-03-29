@@ -12,12 +12,12 @@
      g++ -o srmstofigs srmstofigs.cpp
 */
 
-#include <string>
-#include <cstdio>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 #define ppi 1200
 #define max_components 5000
 #define max_stack 100
-using namespace std;
 
 int line;
 char component[max_components][25];
@@ -383,13 +383,19 @@ int main(int argc, char *argv[]) {
                                         hpos * 2, hpos, vpos, token2);
                             hpos = (k + 1) * pwidth / (markCount + 1);
                             hpos2 = (l + 1) * pwidth / (markCount + 1);
-                            fprintf(ofp,
-                                    "2 1 0 1 -1 7 0 0 -1 0.000 0 0 -1 1 0 2\n");
-                            fprintf(ofp, "     2 1 1.00 60.00 120.00\n");
-                            fprintf(ofp, "      %d %d %d %d\n", hpos, vpos + 50,
-                                    hpos2, vpos + 50);
-                            voffset = 300;
                             token = next_token(NULL, spacenewline);
+                            if (strcmp(token, "+")) { //if the token is not +
+                              fprintf(ofp,
+                                      "2 1 0 1 -1 7 0 0 -1 0.000 0 0 -1 1 0 2\n");
+                              fprintf(ofp, "     2 1 1.00 60.00 120.00\n");
+                              fprintf(ofp, "      %d %d %d %d\n", hpos, vpos + 50,
+                                      hpos2, vpos + 50);
+                              voffset = 300;
+                            } else {
+                              token = ";"; // treat the + like a ; going forward.
+                              voffset = 150;
+                            }
+
                             if (!strcmp(token, ";")) vpos = vpos + voffset;
                         }
                     }
