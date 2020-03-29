@@ -8,8 +8,20 @@
 /*   Allow isolation of one or more components using the isolate
      keyword. This removes all components that to not (transitively)
      touch the component(s) being isolated */
-/*   Updated to cpp file to use C++ compiler. Compile this code with
-     g++ -o srmstofigs srmstofigs.cpp
+/*   Compile this code with the gnu C compiler using this command.
+
+         gcc -o srmstofigs srmstofigs.c
+
+     If you have trouble compiling on a Mac OS X system because stdlib.h
+     is missing, you need to make sure you have the command-line tools
+     installed. You can do that with
+
+     sudo xcode-select --install
+
+     If they are already installed, you may need to link to the include
+     directory. That might be done by compiling
+
+         gcc -o srmstofigs -I /path/to/stdlib.h srmstofigs.c
 */
 
 #include <stdio.h>
