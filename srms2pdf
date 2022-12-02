@@ -11,4 +11,5 @@ done
 gs -q -sDEVICE=pdfwrite -sOutputFile=$FILE.pdf -dNOPAUSE -dBATCH $FILE*.ps
 rm $FILE*.fig
 rm $FILE*.ps
-open $FILE.pdf
+#If on a Mac system you can open and preview from this script.
+#open $FILE.pdf

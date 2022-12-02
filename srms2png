@@ -10,4 +10,4 @@ do
 done
 rm $FILE*.fig
 rm $FILE*.pdf
-open $FILE*.png
+#open $FILE*.png
